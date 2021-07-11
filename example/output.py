@@ -1,5 +1,5 @@
-foo = 1
-BaR = 2
+FOo = 1
+bAR = 2
 
 X = 4
 
@@ -8,24 +8,35 @@ X2 = 2
 x3 = 3
 X4 = 4
 
-hErewEConTaiNANOtheRfoOvArIAbLe = 15
+hEREwecONTAinaNOtHeRfOOvArIABlE = 15
 
-def teSTfUnc(heLLo, goODBYE):
-    return heLLo + goODBYE
-
-
-print(teSTfUnc(2, 3))
-
-
-# Here we look to see if it will catch a comment referencing the function teSTfUnc
-
-class tesTcLasS:
-    def __init__(sELF, XPoSItIoN, YPoSITion):
-        sELF.xGrapHPOSItIoN = XPoSItIoN
-        sELF.YgraphPosiTIon = YPoSITion
-
-    def sTRanGEmeTHOd(sELF):
-        return sELF.YgraphPosiTIon + sELF.xGrapHPOSItIoN
+MyTuPLE = (1,2,3)
+_, _, IMPORTANT = MyTuPLE
+_ = 5
+lEADIngunDeRSCore = 5
 
 
-CheE = 8
+def tESTfunC(HEllo, GOODBYe):
+    return HEllo + GOODBYe
+
+
+print(tESTfunC(2, 3))
+
+
+# Here we look to see if it will catch a comment referencing the function tESTfunC
+
+class TeStClaSS:
+    def __init__(SElF, XPOsitIOn, ypOsitION):
+        SElF.XgRAPhposItIOn = XPOsitIOn
+        SElF.ygrApHpOsItIon = ypOsitION
+
+    def sTrAnGEMeTHOD(SElF):
+        return SElF.ygrApHpOsItIon + SElF.XgRAPhposItIOn
+
+
+mY = TeStClaSS(1, 14)
+
+mY.XgRAPhposItIOn = 127
+
+
+chEe = 8

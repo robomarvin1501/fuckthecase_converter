@@ -10,6 +10,12 @@ x4 = 4
 
 here_we_contain_another_foo_variable = 15
 
+mytuple = (1,2,3)
+_, _, IMPORTANT = mytuple
+_ = 5
+_leading_underscore = 5
+
+
 def testfunc(hello, goodbye):
     return hello + goodbye
 
@@ -26,6 +32,11 @@ class TestClass:
 
     def strange_method(self):
         return self.y_graph_position + self.x_graph_position
+
+
+my = TestClass(1, 14)
+
+my.x_graph_position = 127
 
 
 chee = 8

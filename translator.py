@@ -3,18 +3,21 @@ import ast
 import sys
 import random
 import re
+from functools import lru_cache
 
 
 # random.seed(100)
 
 # TODO market as a code correcter, remove double space etc...
-# TODO decorate the convert_to_fuckthecase so that there is not a reassignment of variables every time it is called
 
+@lru_cache(maxsize=None)
 def convert_to_fuckthecase(name: str) -> str:
     if name[0:2] == '__' or name[-2:] == '__':
         return name
+    if name == '_':
+        return name
     new_name = ""
-    name = "".join(re.findall("[a-zA-Z0-9]+", name))
+    name = "".join(re.findall("[a-zA-Z0-9]", name))
     name = name.lower()
     for letter in name:
         if random.random() < 0.5:
@@ -47,7 +50,10 @@ class TreeWalker(ast.NodeVisitor):
             for target in node.targets:
                 self.tokens[target.id] = convert_to_fuckthecase(target.id)
         except AttributeError:
-            self.tokens[node.value.id] = convert_to_fuckthecase(node.value.id)
+            try:
+                self.tokens[node.value.id] = convert_to_fuckthecase(node.value.id)
+            except AttributeError:
+                self.tokens[target.attr] = convert_to_fuckthecase(target.attr)
 
     def visit_Attribute(self, node):
         self.tokens[node.attr] = convert_to_fuckthecase(node.attr)
